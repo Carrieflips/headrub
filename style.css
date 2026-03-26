@@ -228,13 +228,13 @@ a {
 .footer-links a {
   font-size: 12px;
   font-weight: 400;
-  color: var(--footer-link);
+  color: rgba(255, 255, 255, 0.45);
   letter-spacing: 0.03em;
   transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: var(--coral);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ─── Legal pages ─── */
