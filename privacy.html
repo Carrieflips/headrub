@@ -23,7 +23,96 @@
     </div>
 
     <div class="legal-content">
-      [PASTE CONTENT HERE]
+
+      <p class="legal-meta">Goshdang Apps · Last Updated: March 2026</p>
+
+      <p class="legal-intro">What information Head Rub collects, why we collect it, and how it's used. (Almost nothing, and we never sell anything.)</p>
+
+      <p>Head Rub is published by Goshdang Apps, based in California. By using Head Rub, you agree to the practices described in this policy.</p>
+
+      <h2>1. Who We Are</h2>
+      <p>Head Rub is published by Goshdang Apps, based in California. "We," "our," and "us" in this document refer to Goshdang Apps.</p>
+      <p>Questions or requests can be sent to: <a href="mailto:hello@headrub.app">hello@headrub.app</a></p>
+
+      <h2>2. What We Collect</h2>
+
+      <h3>Device ID (anonymous identifier)</h3>
+      <p>When you first open Head Rub, the app generates a random ID and stores it on your device using AsyncStorage. This ID is not linked to your name, Apple ID, email address, or any other personal identifier. It is a randomly generated string that exists solely to allow us to understand how the app is being used in aggregate.</p>
+      <p>This device ID is used to log anonymous analytics events (see Section 3). It is never shared with advertisers and is never used to identify you as an individual.</p>
+
+      <h3>Analytics Events</h3>
+      <p>Head Rub logs a small number of anonymous usage events to a private Supabase database:</p>
+      <ul>
+        <li>Session started (which routine, anonymous device ID, timestamp)</li>
+        <li>Session completed (completion percentage)</li>
+        <li>Session abandoned (which step, completion percentage)</li>
+        <li>Session rated (1–5 stars, routine ID, device ID — subscribers only)</li>
+        <li>Paywall viewed (what triggered it)</li>
+        <li>Accessibility mode toggled (to white or to red)</li>
+        <li>Narrator thumb-up tapped</li>
+      </ul>
+      <p>None of these events contain your name, location, email address, Apple ID, health history, or any other personal information. They are the equivalent of a paper tally on the wall.</p>
+
+      <h3>Subscription Status</h3>
+      <p>Head Rub uses RevenueCat to manage subscriptions. RevenueCat processes your payment through the Apple App Store and returns an entitlement status (subscribed / not subscribed / in trial) to the app. We do not see or store your payment details, billing address, or Apple ID. RevenueCat's privacy policy governs how they handle your information: revenuecat.com/privacy</p>
+
+      <h3>Feedback</h3>
+      <p>If you submit feedback through the Give Feedback screen in Settings, your message is stored in our database alongside your anonymous device ID and a timestamp. Your name and contact details are not attached unless you choose to include them in the message text.</p>
+
+      <h3>What We Do Not Collect</h3>
+      <ul>
+        <li>Your name</li>
+        <li>Your email address</li>
+        <li>Your location</li>
+        <li>Your Apple ID or any account credentials</li>
+        <li>Your health history, diagnoses, or medical information</li>
+        <li>Any data from your contacts, calendar, camera, or microphone</li>
+        <li>Any data from other apps on your device</li>
+      </ul>
+      <p>Head Rub does not request any device permissions beyond what is required to play audio.</p>
+
+      <h2>3. How We Use What We Collect</h2>
+      <p>The anonymous analytics data described above is used only to understand how the app is being used — which routines are popular, where sessions tend to end, whether the paywall is working. This helps us improve the app. It is never used to identify individual users, never sold, never shared with advertisers.</p>
+      <p>Feedback submissions are read by the developer (Carrie) and may be used to inform product decisions. They are never shared publicly without your permission.</p>
+
+      <h2>4. Third-Party Services</h2>
+      <p>Head Rub uses a small number of third-party services to function. Each is described below:</p>
+
+      <h3>Supabase</h3>
+      <p>Supabase provides the database that stores anonymous analytics events and feedback submissions. Supabase is hosted in the United States. Supabase's privacy policy is available at supabase.com/privacy.</p>
+
+      <h3>RevenueCat</h3>
+      <p>RevenueCat manages subscription entitlements. If you subscribe, RevenueCat processes your payment via Apple and provides the app with your subscription status. We do not receive or store your payment details. RevenueCat's privacy policy is at revenuecat.com/privacy.</p>
+
+      <h3>Apple App Store</h3>
+      <p>Head Rub is distributed through the Apple App Store. Apple may collect certain information as part of the download and installation process. Apple's privacy policy governs that collection: apple.com/legal/privacy.</p>
+
+      <h3>headrub.app Website</h3>
+      <p>The Head Rub website uses basic, anonymous analytics (no advertising trackers, no third-party pixels) to understand how many people visit and where they come from. No personal information is collected through the website.</p>
+
+      <h2>5. Data Storage and Security</h2>
+      <p>Anonymous analytics data is stored in a Supabase database with access restricted to the developer. Data is stored in the United States. We apply reasonable technical safeguards, but no data transmission or storage system can be guaranteed completely secure.</p>
+      <p>Your device ID and accessibility preference are stored locally on your device using AsyncStorage and never leave your device except as part of the anonymous event logs described above.</p>
+
+      <h2>6. Children's Privacy</h2>
+      <p>Head Rub is intended for users aged 13 and older. We do not knowingly collect any information from children under 13. If you believe a child under 13 has used the app, please contact us at <a href="mailto:hello@headrub.app">hello@headrub.app</a> and we will take appropriate steps.</p>
+
+      <h2>7. Your Rights</h2>
+      <p>Because we collect no personal information tied to your identity, most data rights requests do not apply in the traditional sense — we have no way to identify which data belongs to you. However:</p>
+      <ul>
+        <li>You can clear your local device ID at any time by deleting and reinstalling the app. A new anonymous ID will be generated.</li>
+        <li>If you submitted feedback and would like it removed, contact us at <a href="mailto:hello@headrub.app">hello@headrub.app</a> and we will delete it.</li>
+        <li>If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA). Because we do not collect personal information linked to your identity, most CCPA rights do not apply. We do not sell personal information. We do not share personal information with advertisers. For any CCPA inquiry, contact <a href="mailto:hello@headrub.app">hello@headrub.app</a>.</li>
+        <li>If you are in the European Economic Area, UK, or Switzerland, GDPR principles apply. Because we do not collect identifiable personal data, there is minimal GDPR exposure. For any inquiry, contact <a href="mailto:hello@headrub.app">hello@headrub.app</a>.</li>
+      </ul>
+
+      <h2>10. Changes to This Policy</h2>
+      <p>If we make material changes to this policy, we will update the date at the top and, where appropriate, provide notice within the app. Continued use of Head Rub after a policy update constitutes acceptance of the updated terms.</p>
+
+      <h2>11. Contact</h2>
+      <p>Questions about this Privacy Policy should be directed to: <a href="mailto:hello@headrub.app">hello@headrub.app</a></p>
+      <p>Goshdang Apps is based in California, United States.</p>
+
     </div>
   </main>
 
