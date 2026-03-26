@@ -169,10 +169,110 @@ a {
   opacity: 0.8;
 }
 
+.appstore-link--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
 .appstore-badge {
   display: block;
   height: 48px;
   width: auto;
+}
+
+/* Early access */
+.early-access {
+  margin-top: 56px;
+}
+
+.early-access-heading {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--coral);
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.early-access-subhead {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(232, 104, 93, 0.6);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 320px;
+}
+
+.waitlist-input {
+  width: 100%;
+  background: #111;
+  border: 1px solid var(--coral);
+  border-radius: 0;
+  color: var(--coral);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 12px 14px;
+  outline: none;
+  transition: opacity 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.waitlist-input::placeholder {
+  color: rgba(232, 104, 93, 0.45);
+}
+
+.waitlist-input:focus {
+  opacity: 1;
+}
+
+.waitlist-error {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--coral);
+  opacity: 0.7;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.waitlist-button {
+  background: transparent;
+  border: 1px solid var(--coral);
+  color: var(--coral);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  padding: 11px 24px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.waitlist-button:hover:not(:disabled) {
+  opacity: 0.75;
+}
+
+.waitlist-button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.waitlist-success {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--coral);
+  margin-top: 4px;
+  line-height: 1.6;
 }
 
 /* ─── About block ─── */

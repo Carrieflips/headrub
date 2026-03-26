@@ -39,9 +39,30 @@
         <p class="hero-subhead">
           Guided head massage routines for people whose heads carry the weight of the day — and for anyone who knows what it's like when the light gets to be too much.
         </p>
-        <a href="#" class="appstore-link" aria-label="Download Head Rub on the App Store">
+        <a class="appstore-link appstore-link--disabled" aria-hidden="true" tabindex="-1">
           <img src="assets/appstore-badge.svg" alt="Download on the App Store" class="appstore-badge">
         </a>
+
+        <!-- Early access -->
+        <div class="early-access">
+          <h2 class="early-access-heading">Get early access</h2>
+          <p class="early-access-subhead">Request access to try Head Rub before it's available on the App Store.</p>
+
+          <form class="waitlist-form" id="waitlist-form" novalidate>
+            <input
+              type="email"
+              id="waitlist-email"
+              class="waitlist-input"
+              placeholder="Your email address"
+              autocomplete="email"
+              required
+            >
+            <p class="waitlist-error" id="waitlist-error" hidden></p>
+            <button type="submit" class="waitlist-button" id="waitlist-button">Request access</button>
+          </form>
+
+          <p class="waitlist-success" id="waitlist-success" hidden>Request received. We'll be in touch.</p>
+        </div>
       </div>
 
     </section>
@@ -59,6 +80,75 @@
     </nav>
   </footer>
 
+
+  <script>
+    (function () {
+      // <!-- SUPABASE_URL: https://patqmwdcosxgrbskvdpu.supabase.co -->
+      // <!-- SUPABASE_ANON_KEY: sb_publishable_9kXZ8K9CwJonkvNTWBsdfg_lIaEBnUW -->
+      var SUPABASE_URL = 'https://patqmwdcosxgrbskvdpu.supabase.co';
+      var SUPABASE_KEY = 'sb_publishable_9kXZ8K9CwJonkvNTWBsdfg_lIaEBnUW';
+
+      var form    = document.getElementById('waitlist-form');
+      var input   = document.getElementById('waitlist-email');
+      var button  = document.getElementById('waitlist-button');
+      var errorEl = document.getElementById('waitlist-error');
+      var success = document.getElementById('waitlist-success');
+
+      function showError(msg) {
+        errorEl.textContent = msg;
+        errorEl.hidden = false;
+        button.disabled = false;
+        button.textContent = 'Request access';
+      }
+
+      function clearError() {
+        errorEl.hidden = true;
+        errorEl.textContent = '';
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        clearError();
+
+        var email = input.value.trim();
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          showError('Please enter a valid email address.');
+          return;
+        }
+
+        button.disabled = true;
+        button.textContent = 'Sending\u2026';
+
+        fetch(SUPABASE_URL + '/rest/v1/waitlist', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_KEY,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ email: email })
+        })
+        .then(function (res) {
+          if (res.ok) {
+            form.hidden = true;
+            success.hidden = false;
+            return;
+          }
+          return res.json().then(function (data) {
+            if (data && data.code === '23505') {
+              showError('You\u2019ve already requested access.');
+            } else {
+              showError('Something went wrong. Try again.');
+            }
+          });
+        })
+        .catch(function () {
+          showError('Something went wrong. Try again.');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
