@@ -164,6 +164,10 @@ a {
   .hero-headline {
     font-size: 52px;
   }
+
+  .waitlist-button {
+    width: 100%;
+  }
 }
 
 .hero-subhead {
