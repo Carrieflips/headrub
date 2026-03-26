@@ -21,12 +21,14 @@
     <section class="hero">
 
       <!-- Phone device frame -->
-      <div class="phone-frame" id="phone-frame">
-        <!-- Placeholder shown until video loads; JS swaps in the video element -->
-        <div class="phone-placeholder" id="phone-placeholder">
-          <img src="assets/logo.svg" class="placeholder-logo" alt="">
-          <span>demo coming soon</span>
-        </div>
+      <div class="phone-frame">
+        <video
+          src="assets/screen-recording-V1-03-26-2026.mov"
+          controls
+          playsinline
+          preload="metadata"
+          aria-label="Head Rub app demo"
+        ></video>
       </div>
 
       <!-- Hero text -->
@@ -69,28 +71,6 @@
     </nav>
   </footer>
 
-  <script>
-    // Attempt to load demo video; keep placeholder if file is absent
-    (function () {
-      var frame = document.getElementById('phone-frame');
-      var placeholder = document.getElementById('phone-placeholder');
-
-      var video = document.createElement('video');
-      video.src = 'assets/demo.mp4';
-      video.controls = true;
-      video.setAttribute('playsinline', '');
-      video.setAttribute('preload', 'metadata');
-      video.setAttribute('aria-label', 'Head Rub app demo');
-
-      video.addEventListener('loadedmetadata', function () {
-        if (placeholder && placeholder.parentNode === frame) {
-          frame.removeChild(placeholder);
-        }
-        frame.appendChild(video);
-      });
-      // If the file isn't there yet, the placeholder stays — no action needed
-    })();
-  </script>
 
 </body>
 </html>
