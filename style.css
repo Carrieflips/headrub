@@ -248,7 +248,7 @@ a {
 .legal-title h1 {
   font-size: clamp(36px, 7vw, 60px);
   font-weight: 400;
-  color: var(--coral);
+  color: var(--white);
   letter-spacing: -0.03em;
   line-height: 1.1;
 }
@@ -271,7 +271,7 @@ a {
   font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.35);
   margin-bottom: 36px;
 }
 
@@ -291,7 +291,7 @@ a {
 .legal-content h2 {
   font-size: 13px;
   font-weight: 500;
-  color: var(--coral);
+  color: var(--white);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-top: 52px;
