@@ -39,6 +39,8 @@ a {
 
 .site-header {
   padding: 36px 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .logo-link {
