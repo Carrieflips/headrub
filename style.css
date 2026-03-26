@@ -262,9 +262,9 @@ a {
 }
 
 .waitlist-button {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  color: var(--white);
+  background: var(--coral);
+  border: 1px solid var(--coral);
+  color: var(--black);
   font-family: inherit;
   font-size: 13px;
   font-weight: 400;
