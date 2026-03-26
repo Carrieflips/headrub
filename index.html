@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guided head massage routines for people whose heads carry the weight of the day.">
+  <meta name="theme-color" content="#000000">
+  <title>Head Rub — Guided head massage routines</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="logo-link" aria-label="Head Rub">
+      <img src="assets/logo.svg" alt="Head Rub" class="logo">
+    </a>
+  </header>
+
+  <main>
+    <section class="hero">
+
+      <!-- Phone device frame -->
+      <div class="phone-frame" id="phone-frame">
+        <!-- Placeholder shown until video loads; JS swaps in the video element -->
+        <div class="phone-placeholder" id="phone-placeholder">
+          <img src="assets/logo.svg" class="placeholder-logo" alt="">
+          <span>demo coming soon</span>
+        </div>
+      </div>
+
+      <!-- Hero text -->
+      <div class="hero-text">
+        <h1 class="hero-headline">Your hands.&nbsp;Your head.<br>A little relief.</h1>
+        <p class="hero-subhead">
+          Guided head massage routines for people whose heads carry the weight of the day — and for anyone who knows what it's like when the light gets to be too much.
+        </p>
+        <a href="#" class="appstore-link" aria-label="Download Head Rub on the App Store">
+          <img src="assets/appstore-badge.svg" alt="Download on the App Store" class="appstore-badge">
+        </a>
+      </div>
+
+    </section>
+
+    <!-- About -->
+    <section class="about">
+      <p>
+        Head Rub was built by a migraine sufferer who spent years looking for something that fitted into her life and didn't require an appointment. She's a product designer. Her head hurts a lot.
+      </p>
+      <p>
+        The routines are narrated by her father — a school custodian from Ohio with a naturally calm voice. Not a hired narrator. Not a synthesized assistant. A real person, chosen for love.
+      </p>
+    </section>
+
+    <!-- Health disclaimer -->
+    <div class="disclaimer">
+      <p>
+        Head Rub is a wellness practice, not a substitute for medical care. If you experience severe or frequent head pain, please consult a healthcare provider.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="mailto:hey@carrieflips.com">Say hello</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="health.html">Health &amp; Safety</a>
+    </nav>
+  </footer>
+
+  <script>
+    // Attempt to load demo video; keep placeholder if file is absent
+    (function () {
+      var frame = document.getElementById('phone-frame');
+      var placeholder = document.getElementById('phone-placeholder');
+
+      var video = document.createElement('video');
+      video.src = 'assets/demo.mp4';
+      video.controls = true;
+      video.setAttribute('playsinline', '');
+      video.setAttribute('preload', 'metadata');
+      video.setAttribute('aria-label', 'Head Rub app demo');
+
+      video.addEventListener('loadedmetadata', function () {
+        if (placeholder && placeholder.parentNode === frame) {
+          frame.removeChild(placeholder);
+        }
+        frame.appendChild(video);
+      });
+      // If the file isn't there yet, the placeholder stays — no action needed
+    })();
+  </script>
+
+</body>
+</html>
